@@ -43,11 +43,17 @@ function App() {
     setCity(newCity)
   }
 
+  let content;
+
+  if (error) {
+    content = "That city doesn't exist"
+  }
   return (
     <React.Fragment>
       <section>
         {fetched && <City city={cityData}/>}
         <CityForm onChangeCity={changeCity} />
+        {content}
       </section>
     </React.Fragment>
   );
